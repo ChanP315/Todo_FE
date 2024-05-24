@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: `${process.env.REACT_APP_BACKEND_URL}/api`,
+  baseURL: `${process.env.REACT_APP_BACKEND_PROXY}/api`,
+  // baseURL: `http://todo-pcy-env.eba-c2q7tutr.ap-northeast-2.elasticbeanstalk.com/api`,
   headers: {
     "Content-Type": "application/json",
   },
