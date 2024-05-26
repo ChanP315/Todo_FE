@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+nodejs_back/TodoSystem/Todo_FE/public/_redirects
+  - /api/* http://<notion/문서/AWS(아마존)-12개월/Todo-Study의 주소>/api/:splat 200
+
+nodejs_back/TodoSystem/Todo_FE/.env
+  - REACT_APP_BACKEND_URI=http://localhost:4000
+  - REACT_APP_BACKEND_PROXY=https://<netlify에 배포되어있는 Todo domain>
