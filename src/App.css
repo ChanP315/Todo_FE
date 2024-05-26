@@ -24,7 +24,7 @@ body{
   padding:1em
 }
 .add-item-row{
-  margin-top:50px !important;
+  margin-top:10px !important;
   margin-bottom: 30px;
 }
 .input-box{
@@ -102,4 +102,11 @@ button{
 
 .red-error{
   color: red;
+}
+
+.login-click{
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 5px 0px 0px;
+  cursor: pointer;
 }

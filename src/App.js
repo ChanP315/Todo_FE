@@ -12,7 +12,6 @@ function App() {
     <Routes>
       <Route path="/" element={<TodoPage />} />
       <Route path="/register" element={<RegisterPage />} />
-
       <Route path="/login" element={<LoginPage />} />
     </Routes>
   );

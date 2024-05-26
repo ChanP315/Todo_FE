@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -10,6 +11,8 @@ const TodoPage = () => {
 
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState();
+
+  const navigate = useNavigate();
 
   const getTasks = async() => {
     const response = await api.get('/tasks');
@@ -87,6 +90,15 @@ const TodoPage = () => {
 
   return (
     <Container>
+      <Row >
+        <Col xs={10}/>
+        <Col xs={1}>
+          <p className="login-click" onClick={()=>navigate('/register')}>회원 가입</p>
+        </Col>
+        <Col xs={1}>
+          <p className="login-click" onClick={()=>navigate('/login')}>로그인</p>
+        </Col>
+      </Row>
       <Row className="add-item-row">
         <Col xs={12} sm={10}>
           <input
