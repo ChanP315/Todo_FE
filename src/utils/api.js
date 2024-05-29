@@ -4,8 +4,11 @@ const api = axios.create({
   baseURL: `${process.env.REACT_APP_BACKEND_PROXY}/api`,
   // baseURL: `http://todo-pcy-env.eba-c2q7tutr.ap-northeast-2.elasticbeanstalk.com/api`,
   // baseURL: `${process.env.REACT_APP_BACKEND_URI}/api`,
+
+  // baseURL: `${process.env.REACT_APP_BACKEND_Devlop_URI}/api`,
   headers: {
     "Content-Type": "application/json",
+    authorization : "Bearer " + sessionStorage.getItem("token"),
   },
 });
 /**

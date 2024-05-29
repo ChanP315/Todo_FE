@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import api from "../utils/api"
 
-const LoginPage = () => {
+const LoginPage = ({user, setUser}) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
-  const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
 
@@ -34,6 +33,10 @@ const LoginPage = () => {
     }
   };
 
+  if(user)
+  {
+    return <Navigate to ="/"/>
+  }
 
   return (
     <div className="display-center">

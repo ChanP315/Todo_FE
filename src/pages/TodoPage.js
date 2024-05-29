@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import TodoBoard from "../components/TodoBoard";
 import api from "../utils/api";
 
-const TodoPage = () => {
+const TodoPage = ({setUser}) => {
 
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState();
@@ -16,6 +16,7 @@ const TodoPage = () => {
 
   const getTasks = async() => {
     const response = await api.get('/tasks');
+    console.log("taskList: " , response.data.data)
     setTodoList(response.data.data);
   };
 
@@ -84,6 +85,12 @@ const TodoPage = () => {
     }
   }
 
+  const logOut = () => {
+    sessionStorage.clear();
+    setUser(undefined);
+    navigate('/login');
+  };
+
   useEffect(()=>{
     getTasks();
   }, []);
@@ -91,12 +98,18 @@ const TodoPage = () => {
   return (
     <Container>
       <Row >
-        <Col xs={10}/>
+        <Col xs={1}>
+          Test용 버튼
+        </Col>
         <Col xs={1}>
           <p className="login-click" onClick={()=>navigate('/register')}>회원 가입</p>
         </Col>
         <Col xs={1}>
           <p className="login-click" onClick={()=>navigate('/login')}>로그인</p>
+        </Col>
+        <Col xs={8}/>
+        <Col xs={1}>
+          <p className="login-click" onClick={()=>logOut()}>로그아웃</p>
         </Col>
       </Row>
       <Row className="add-item-row">
